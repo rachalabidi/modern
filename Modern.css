@@ -16,8 +16,169 @@ body{
   margin-left:9%; 
 }
 
+#navbar-container{
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-color:black;
+  z-index: 1;
+}
 
-.overlay {
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+header .container{
+    max-width: 100%;
+    width: 70%;
+    margin-left: 150px;
+}
+
+.navbar{
+    position: relative;
+    width: 100%;
+    color: white;
+    z-index: 100;
+    padding-top:  20px; ;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: center;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: grey;
+}
+
+@media (max-width: 768px),(orientation: portrait){
+    .navbar{
+        opacity: 0.95;
+        
+    }
+    .navbar a{
+color: black;}
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+        
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+        color: black;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        right: 20px;
+        z-index: 5;
+        opacity: 0;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background:white;
+    }
+    
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 150px;
+        background: #fff;
+        height: 100vh;
+        max-width: 100%;
+        transform: translate(calc(-100vw - 150%));
+        display: flex;
+        flex-direction: column;
+        margin-right: -100px;
+        padding-right: 70px;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}
+
+
+/* .overlay {
   height: 100%;
   width: 0;
   position: fixed;
@@ -117,22 +278,11 @@ right: 35px;
   }
    .flex-container {
     flex-direction: column;
-  }
- .contactImg{
-    display: none;
-  }
-.PROJECTS .container{
-  margin: auto ;
- 
+  } */
 
-  }
- 
-}
+  
 
-
-/*team */
-
-.team .flex-container{
+/*team */.team .flex-container{
 display: flex;
 margin:0 100PX ;
 }
@@ -234,7 +384,6 @@ H2{
     transform: translate(-50%, -50%);
     white-space: nowrap;
   }
-
 /* CONTACT */
 /* .contactUs{
   background-color: white;
@@ -300,7 +449,17 @@ button:hover{
   background-color: white;
   color: black;
 } */
-
+@media (max-width: 768px) {
+  .contactImg{
+     display: none;
+   }
+ .PROJECTS .container{
+   margin: auto ;}
+ .flex-container {
+     flex-direction: column;
+ }
+  
+ }
 
 .contactUs{
   background-color: white;
@@ -773,5 +932,4 @@ p{
 }
 
 
-/* PHONE AND  */
 
